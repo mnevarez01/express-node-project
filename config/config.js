@@ -1,8 +1,4 @@
 require('dotenv').config();
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 module.exports = {
   'development': {
     'username': process.env.DB_USERNAME,
