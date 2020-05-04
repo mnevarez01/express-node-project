@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS brewery_db;
+CREATE DATABASE brewery_db;
