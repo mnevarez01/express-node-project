@@ -1,5 +1,7 @@
 // Requiring path to so we can use relative routes to our HTML files
 var path = require('path');
+var db = require('../models');
+
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require('../config/middleware/isLoggedIn');
@@ -11,7 +13,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect('/brewery');
     }
-    res.sendFile(path.join(__dirname, '../public/signup.html'));
+    res.render('signup.pug');
   });
 
   app.get('/login', function (req, res) {
@@ -19,13 +21,14 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect('/brewery');
     }
-    res.sendFile(path.join(__dirname, '../public/login.html'));
+    res.render('login.pug');
   });
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/brewery', isAuthenticated, function (req, res) {
-    res.sendFile(path.join(__dirname, '../public/brewery.html'));
+    res.render('');
+    // will need to make a db call to get the user data...pass that data into the template
   });
 
 };

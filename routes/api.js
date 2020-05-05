@@ -26,6 +26,9 @@ module.exports = function (app) {
       });
   });
 
+  app.post('/api/beers', function (req, res) {
+
+  });
   // Route for logging user out
   app.get('/logout', function (req, res) {
     req.logout();

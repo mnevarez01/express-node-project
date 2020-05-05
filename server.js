@@ -4,6 +4,7 @@ var session = require('express-session');
 // Requiring passport as we've configured it
 var passport = require('./config/passport');
 var pug = require('pug');
+var path = require('path');
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -13,9 +14,13 @@ var db = require('./models');
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('html'));
+
 app.use(express.static('public'));
+
+
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
+app.use(express.static('public/img'));
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: 'mouse rat', resave: true, saveUninitialized: true }));
