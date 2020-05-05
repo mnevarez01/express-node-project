@@ -1,0 +1,46 @@
+extends layout
+
+block content
+
+   .main.container
+      form(action="POST", method="/api/beer")
+      .form.group.name
+        label(for='name') Beer Name:
+        input#beerName.form-control(type='text', placeholder='Beer Name', name='name')
+      .form.group.description
+        label(for='description') Description of Beer:
+        input#beerName.form-control(type='text', placeholder='Has lime undertones', name='description')
+      .form.group.abv
+        label(for='ABV') Beer ABV:
+        input#beerName.form-control(type='text', placeholder='6.5%', name='ABV')
+      .form.group.ibu
+        label(for='IBU') Beer IBU:
+        input#beerName.form-control(type='text', placeholder='10', name='IBU')
+      .form.group.beerType
+        label(for='beerType') Beer Type:
+        input#beerName.form-control(type='text', placeholder='Pale Ale', name='beerType')
+
+        h2.display-4.m-b-2.breweryInformation Brewery Information
+
+      form(action="POST", method="/api/signup")
+      .form.group.email
+        label(for='email') Email:
+        input#beerName.form-control(type='text', placeholder='name@test.com', name='email')
+      .form.group.password
+        label(for='password') Password:
+        input#beerName.form-control(type='text', placeholder='Secret!', name='password')
+    
+        h2.display-4.m-b-2.beerInformation Beer Information
+
+      form(action="POST", method="/api/brewery")
+      .form.group.email
+        label(for='name') Brewery Name:
+        input#beerName.form-control(type='text', placeholder='Brewery name', name='name')
+      .form.group.password
+        label(for='address') Brewery Address:
+        input#beerName.form-control(type='text', placeholder='3466 N Highland', name='address')
+      .form.group.password
+        label(for='phoneNumber') Phone Number:
+        input#beerName.form-control(type='text', placeholder='333-555-4444', name='phoneNumber')
+    
+        h2.display-4.m-b-2.beerInformation Beer Information

@@ -3,7 +3,7 @@ var express = require('express');
 var session = require('express-session');
 // Requiring passport as we've configured it
 var passport = require('./config/passport');
-var pug = require('pug');
+// var pug = require('pug');
 var path = require('path');
 
 // Setting up port and requiring models for syncing

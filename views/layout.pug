@@ -3,19 +3,20 @@ html
   head
     title=ProjectTitle
 
-    link(rel='stylesheet', href='/style/style.css');
+    link(rel='stylesheet', href='/style/style.css')
     link(rel='stylesheet', href='https://www.w3schools.com/w3css/4/w3.css')
 
   body
     nav.w3-bar.w3-bottombar.bar.w3-border( role="navigation" )
       .wrapclassnav
-      .w3-bar-item Welcome to TravelBuddy
+      .w3-bar-item Name of Project
       if locals.user
         a(href="/").w3-bar-button.w3-button Home
-        a(href="/beers").w3-bar-button.w3-button Beers
-        a(href="/brewery").w3-bar-button.w3-button Brewery
         a(id="qsLogoutBtn" href="/logout").w3-bar-item.w3-button Log Out
       else
+       a(href="/").w3-bar-button.w3-button Home
+        a(href="/beers").w3-bar-button.w3-button Beers
+        a(href="/brewery").w3-bar-button.w3-button Brewery
         a(id="qsLoginBtn" href="/login").w3-bar-button.w3-button Log In
     block content
 

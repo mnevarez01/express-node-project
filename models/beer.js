@@ -5,16 +5,16 @@ module.exports = function (sequelize, Sequelize) {
     description: { type: Sequelize.STRING },
     ABV: { type: Sequelize.INTEGER },
     IBU: { type: Sequelize.INTEGER },
-    beerType: { type: Sequelize.STRING },
-    foreignKey: { type: Sequelize.STRING },
+    beerType: { type: Sequelize.STRING }
+    // foreignKey: { type: Sequelize.STRING },
 
   });
-  Beer.associate = models => {
+  Beer.associate = function (models) {
     Beer.belongsTo(models.Brewery, {
       foreignKey: {
         allowNull: false
       }
-    })
-  }
+    });
+  };
   return Beer;
 };
