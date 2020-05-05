@@ -27,10 +27,23 @@ module.exports = function (app) {
   });
 
   app.post('/api/beers', function (req, res) {
-
+    db.Beer.create(req.body)
+      .then(function () {
+        res.status(200).end();
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
   });
-  app.post('/api/brewery', function (req, res) {
 
+  app.post('/api/brewery', function (req, res) {
+    db.Brewery.create(req.body)
+      .then(function () {
+        res.status(200).end();
+      })
+      .catch(function (err) {
+        res.status(401).json(err);
+      });
   });
   // Route for logging user out
   app.get('/logout', function (req, res) {
