@@ -1,3 +1,7 @@
 #log {
-    margin: 70px;
+    margin-top: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px;
+    border-style: groove;
 }
