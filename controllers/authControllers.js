@@ -18,7 +18,7 @@ module.exports = {
     res.render('login');
   },
   dashboard: function (req, res) {
-    res.render('dashboard', { 
+    res.render('dashboard', {
       email: req.user.email,
       user: JSON.stringify(req.user, null, 2)
     });
