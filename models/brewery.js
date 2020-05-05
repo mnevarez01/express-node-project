@@ -5,16 +5,16 @@ module.exports = function (sequelize, Sequelize) {
     address: { type: Sequelize.STRING },
     phoneNumber: { type: Sequelize.STRING },
   });
-  Brewery.associate = (models) => {
+  Brewery.associate = function (models) {
     Brewery.hasMany(models.Beer, {
-      onDelete: "cascade"
-    })
+      onDelete: 'cascade'
+    });
     Brewery.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
       }
-    })
-  }
+    });
+  };
 
   return Brewery;
 };

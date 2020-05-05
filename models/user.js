@@ -4,11 +4,11 @@ module.exports = function (sequelize, Sequelize) {
     password: { type: Sequelize.STRING, allowNull: false },
   });
 
-  User.associate = (models) => {
+  User.associate = function (models) {
     User.hasMany(models.Brewery, {
-      onDelete: "cascade"
-    })
-  }
+      onDelete: 'cascade'
+    });
+  };
 
   return User;
 };
