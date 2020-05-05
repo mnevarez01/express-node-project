@@ -3,7 +3,7 @@ $(document).ready(function () {
   const beerName = $("input#beerName");
   const valIBU = $("input#IBU");
   const valABV = $("input#ABV");
-  const beerStyle = $("input#beerStyle");
+  const beerType = $("input#beerType");
   const beerDesc = $("input#beerDesc");
 
   signUpForm.on("addBeer", function (event) {
@@ -12,7 +12,7 @@ $(document).ready(function () {
       name: beerName.val().trim(),
       IBU: valIBU.val().trim(), //can be left blank, will return a "N/A" value if left blank
       ABV: valABV.val().trim(),
-      style: beerStyle.val().trim(),
+      style: beerType.val().trim(),
       description: beerDesc.val().trim()
     };
     if (!beerData.name || !beerData.ABV || !beerData.style || !beerData.description) {
@@ -22,7 +22,7 @@ $(document).ready(function () {
     beerName.val();
     valIBU.val();
     valABV.val();
-    beerStyle.val();
+    beerType.val();
     beerDesc.val();
   });
 
