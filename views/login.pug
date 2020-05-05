@@ -1,9 +1,6 @@
-doctype html
+extends layout
 
-html
-    head
-    link(rel="stylesheet", href="../public/style.css")
-    body
+block content
     .content
         form(id= "log" method='POST' action='/login' )
           div.form-group
