@@ -1,1 +1,10 @@
 extends layout
+block content
+    dl
+      each val, index in beers
+        dt= ' ' + val.name
+        dd= 'Type: ' + val.beerType
+        dd= 'IBU: ' + val.IBU
+        dd= 'ABV: ' + val.ABV + '%'
+        dd= 'Description: ' + val.description
+        p 

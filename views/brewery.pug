@@ -1,1 +1,8 @@
 extends layout
+block content
+    dl
+      each val, index in breweries
+        dt= 'Brewery: ' + val.name
+        dt= 'Address: ' + val.address
+        dt= 'Phone Number: ' + val.phoneNumber
+        p
