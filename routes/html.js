@@ -29,22 +29,22 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/brewery', function (req, res) {
-    db.Brewery.findAll().then(brewery => {
-      res.render('brewery.pug', { breweries: brewery });
-    })
+    db.Brewery.findAll().then(function (brewery) {
+      res.render('brewery.pug', { breweries: brewery, className: 'login' });
+    });
     // will need to make a db call to get the user data...pass that data into the template
 
   });
   app.get('/beers', function (req, res) {
-    db.Beer.findAll().then(beer => {
-      res.render('beer.pug', { beers: beer });
-    })
+    db.Beer.findAll({ raw: true }).then(function (beer) {
+      res.render('beer.pug', { beers: beer, className: 'login' });
+    });
   });
   app.get('/brewery/add', isAuthenticated, function (req, res) {
-    res.render('addBrewery')
-  })
+    res.render('addBrewery');
+  });
   app.get('/beers/add', isAuthenticated, function (req, res) {
-    res.render('addBeer')
-  })
+    res.render('addBeer');
+  });
 
 };

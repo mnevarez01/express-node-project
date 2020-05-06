@@ -1,4 +1,22 @@
 #log {
+    position: fixed;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 500px;
+   
+}
+
+.btn-primary{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.backgroundTwo{
+    width: 100%;
+}
+body{
+
     margin-top: 20%;
     margin-left: 30%;
     margin-right: 30%;
