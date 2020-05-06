@@ -27,7 +27,6 @@ module.exports = function (app) {
   });
 
   app.post('/api/beers', function (req, res) {
-    console.log('hit the route');
     db.Beer.create(req.body)
       .then(function () {
         res.status(200).end();
@@ -38,6 +37,7 @@ module.exports = function (app) {
   });
 
   app.post('/api/brewery', function (req, res) {
+    console.log('hit the route');
     db.Brewery.create(req.body)
       .then(function () {
         res.status(200).end();

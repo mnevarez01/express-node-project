@@ -13,7 +13,7 @@ module.exports = function (app) {
     if (req.user) {
       res.redirect('/brewery');
     }
-    res.render('signup.pug');
+    res.render('home');
   });
 
   app.get('/login', function (req, res) {
@@ -29,7 +29,7 @@ module.exports = function (app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/brewery', function (req, res) {
-    db.Brewery.findAll().then(function (brewery) {
+    db.Brewery.findAll({ raw: true }).then(function (brewery) {
       res.render('brewery.pug', { breweries: brewery, className: 'login' });
     });
     // will need to make a db call to get the user data...pass that data into the template
@@ -46,5 +46,7 @@ module.exports = function (app) {
   app.get('/beers/add', isAuthenticated, function (req, res) {
     res.render('addBeer', { className: 'current' });
   });
-
+  app.get('/signup', isAuthenticated, function (req, res) {
+    res.render('signup', { className: 'current' });
+  });
 };

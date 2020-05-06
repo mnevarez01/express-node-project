@@ -2,16 +2,17 @@ extends allForms
 
 block content
   .addBrewery
-    form(action="POST", method="/api/brewery")
+    form(id='addBrewery')
     .form.group.name
       label(for='name') Brewery Name:
       input#breweryName.form-control(type='text', placeholder='Brewery name', name='name')
-    .form.group.adress
+    .form.group.address
       label(for='address') Brewery Address:
       input#breweryAddress.form-control(type='text', placeholder='3466 N Highland', name='address')
     .form.group.phoneNumber
       label(for='phoneNumber') Phone Number:
       input#breweryNumber.form-control(type='text', placeholder='333-555-4444', name='phoneNumber')
 
-    button.btn.btn-primary.w3-btn.w3-black(type='submit') Add Brewery
+
+    button.btn.btn-primary.w3-btn.w3-black#brewery(type='submit') Add Brewery
     
