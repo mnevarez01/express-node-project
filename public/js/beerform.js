@@ -47,6 +47,23 @@ $(document).ready(function () {
 
 });
 
+// $(function () {
+//   $('#log').click('submit', function (event) {
+//     event.preventDefault();
+//     var newUser = {
+//       email: $('#email').val().trim(),
+//       password: $('#password').val().trim()
+//     };
+
+//     $.ajax('/api/', {
+//       type: 'POST',
+//       data: newUser
+//     }).then(function () {
+//       window.location.replace('/brewery/add');
+//     });
+//   });
+// });
+
 $(function () {
   $('#log').click('submit', function (event) {
     event.preventDefault();
@@ -65,14 +82,14 @@ $(function () {
 });
 
 $(function () {
-  $('#log').click('submit', function (event) {
+  $('#brewery').click('submit', function (event) {
     event.preventDefault();
     var addBrewery = {
       name: $('#breweryName').val().trim(),
       address: $('#breweryAddress').val().trim(),
       phoneNumber: $('#breweryNumber').val().trim(),
     };
-
+    console.log('addbrewery', addBrewery);
     $.ajax('/api/brewery', {
       type: 'POST',
       data: addBrewery
