@@ -16,11 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.use(express.static('public'));
-
+app.use(express.static('public/img'));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-app.use(express.static('public/img'));
+
 
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: 'mouse rat', resave: true, saveUninitialized: true }));

@@ -1,1 +1,7 @@
 extends layout
+
+block content
+  div.login
+    ul
+      each val, index in beers
+        li= index + ':' + val.name

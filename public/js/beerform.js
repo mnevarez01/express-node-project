@@ -6,7 +6,7 @@ $(document).ready(function () {
   const beerType = $("input#beerType");
   const beerDesc = $("input#beerDesc");
 
-  signUpForm.on("addBeer", function (event) {
+  beerForm.on("submit", function (event) {
     event.preventDefault();
     const beerData = {
       name: beerName.val().trim(),
