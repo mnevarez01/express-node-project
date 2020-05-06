@@ -7,7 +7,7 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post('/api/login', passport.authenticate('local'), function (req, res) {
-    console.log("hit the route")
+    console.log('hit the route')
     res.json(req.user);
   });
 

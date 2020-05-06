@@ -1,16 +1,16 @@
 $(document).ready(function () {
-  const beerForm = $("form.beerForm");
-  const beerName = $("input#beerName");
-  const valIBU = $("input#IBU");
-  const valABV = $("input#ABV");
-  const beerType = $("input#beerType");
-  const beerDesc = $("input#beerDesc");
+  const beerForm = $('form.beerForm');
+  const beerName = $('input#beerName');
+  const valIBU = $('input#IBU');
+  const valABV = $('input#ABV');
+  const beerType = $('input#beerType');
+  const beerDesc = $('input#beerDesc');
 
-  beerForm.on("submit", function (event) {
+  beerForm.on('submit', function (event) {
     event.preventDefault();
     const beerData = {
       name: beerName.val().trim(),
-      IBU: valIBU.val().trim(), //can be left blank, will return a "N/A" value if left blank
+      IBU: valIBU.val().trim(), //can be left blank, will return a 'N/A' value if left blank
       ABV: valABV.val().trim(),
       style: beerType.val().trim(),
       description: beerDesc.val().trim()
@@ -27,7 +27,7 @@ $(document).ready(function () {
   });
 
   function createBeer(name, ibu, abv, style, description) {
-    $.post("/api/beerForm", {
+    $.post('/api/beerForm', {
       name: name,
       ibu: IBU,
       abv: ABV,
@@ -35,46 +35,64 @@ $(document).ready(function () {
       description: description
     })
       .then(function (data) {
-        window.location.replace("/beerForm");
+        window.location.replace('/beerForm');
       })
       .catch(handleLoginErr);
   }
 
   function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
+    $('#alert .msg').text(err.responseJSON);
+    $('#alert').fadeIn(500);
   }
 
 });
 
+$(function () {
+  $('#log').on('submit', function (event) {
+    event.preventDefault();
+    var User = {
+      email: email,
+      password: password
+    };
+    $.ajax('/login', {
+      type: 'POST',
+      data: User
+    }).then(function () {
+      res.redirect('beer.pug');
+    });
+  });
+
+});
+
+
 
 $(function () {
-  $(".change-stock").on("click", function (event) {
-    var id = $(this).data("id");
-    var noStock = $(this).data("outOfStock");
+  $('.change-stock').on('click', function (event) {
+    var id = $(this).data('id');
+    var noStock = $(this).data('outOfStock');
 
     var stockState = {
       stockAvail: noStock
     };
-    $.ajax("/api/beerform/" + id, {
-      type: "PUT",
+    $.ajax('/api/beerform/' + id, {
+      type: 'PUT',
       data: stockState
     }).then(
       function () {
-        console.log("changed stock to", noStock);
+        console.log('changed stock to', noStock);
         // Reload the page to get the updated list
         location.reload();
       }
     );
   });
-  $(".delete").on("click", function (event) {
-    const id = $(this).attr("data-id");
+  $('.delete').on('click', function (event) {
+    const id = $(this).attr('data-id');
 
     $.ajax(`/api/beerForm/${id}`, {
-      type: "DELETE"
+      type: 'DELETE'
     }).then(() => {
       console.log(`deleted beer with id ${id}`);
       location.reload();
-    })
+    });
   });
 });
