@@ -1,3 +1,10 @@
 #log {
-    margin: 70px;
+    margin-right: 30%;
+    margin-left: 30%;
+    margin-top: 10%;
+}
+
+.btn-primary{
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
