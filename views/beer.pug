@@ -1,7 +1,10 @@
 extends layout
-
 block content
-  div.login
-    ul
+    dl
       each val, index in beers
-        li= index + ':' + val.name
+        dt= ' ' + val.name
+        dd= 'Type: ' + val.beerType
+        dd= 'IBU: ' + val.IBU
+        dd= 'ABV: ' + val.ABV + '%'
+        dd= 'Description: ' + val.description
+        p 

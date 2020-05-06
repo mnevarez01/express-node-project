@@ -3,8 +3,8 @@ module.exports = function (sequelize, Sequelize) {
   var Beer = sequelize.define('Beer', {
     name: { type: Sequelize.STRING },
     description: { type: Sequelize.STRING },
-    ABV: { type: Sequelize.INTEGER },
-    IBU: { type: Sequelize.INTEGER },
+    ABV: { type: Sequelize.FLOAT },
+    IBU: { type: Sequelize.INTEGER, allowNull: true },
     beerType: { type: Sequelize.STRING }
     // foreignKey: { type: Sequelize.STRING },
 

@@ -45,7 +45,6 @@ module.exports = function (app) {
   });
   app.get('/beers/add', isAuthenticated, function (req, res) {
     res.render('addBeer');
-
   });
 
 };
