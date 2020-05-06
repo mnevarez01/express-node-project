@@ -41,10 +41,10 @@ module.exports = function (app) {
     });
   });
   app.get('/brewery/add', isAuthenticated, function (req, res) {
-    res.render('addBrewery');
+    res.render('addBrewery', { className: 'current' });
   });
   app.get('/beers/add', isAuthenticated, function (req, res) {
-    res.render('addBeer');
+    res.render('addBeer', { className: 'current' });
   });
 
 };
