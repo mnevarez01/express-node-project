@@ -43,7 +43,7 @@ $(document).ready(function () {
       BreweryId: $.urlParam('breweryid')
     })
       .then(function (data) {
-        window.location.replace('/beers');
+        window.location.replace('/beers?breweryid=' + id);
       })
       .catch(handleLoginErr);
   }
