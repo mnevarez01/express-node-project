@@ -1,41 +1,49 @@
 $(document).ready(function () {
-  const beerForm = $('form.beerForm');
+  const beerForm = $('form#add-beer');
   const beerName = $('input#beerName');
   const valIBU = $('input#IBU');
   const valABV = $('input#ABV');
   const beerType = $('input#beerType');
   const beerDesc = $('input#beerDesc');
 
+  $.urlParam = function (name) {
+    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+    if (results === null) {
+      return null;
+    }
+    return decodeURI(results[1]) || 0;
+  };
   beerForm.on('submit', function (event) {
     event.preventDefault();
     const beerData = {
       name: beerName.val().trim(),
       IBU: valIBU.val().trim(), //can be left blank, will return a 'N/A' value if left blank
       ABV: valABV.val().trim(),
-      style: beerType.val().trim(),
+      beerType: beerType.val().trim(),
       description: beerDesc.val().trim()
     };
-    if (!beerData.name || !beerData.ABV || !beerData.style || !beerData.description) {
+    if (!beerData.name || !beerData.ABV || !beerData.beerType || !beerData.description) {
       return;
     }
-    createBeer(beerData.name, beerData.ABV, beerData.IBU, beerData.style, beerData.description);
-    beerName.val();
-    valIBU.val();
-    valABV.val();
-    beerType.val();
-    beerDesc.val();
+    createBeer(beerData.name, beerData.ABV, beerData.IBU, beerData.beerType, beerData.description);
+    beerName.val('');
+    valIBU.val('');
+    valABV.val('');
+    beerType.val('');
+    beerDesc.val('');
   });
 
-  function createBeer(name, ibu, abv, style, description) {
-    $.post('/api/beerForm', {
+  function createBeer(name, abv, ibu, beerType, description) {
+    $.post('/api/beers', {
       name: name,
-      ibu: IBU,
-      abv: ABV,
-      style: style,
-      description: description
+      ABV: abv,
+      IBU: ibu,
+      beerType: beerType,
+      description: description,
+      BreweryId: $.urlParam('breweryid')
     })
       .then(function (data) {
-        window.location.replace('/beerForm');
+        window.location.replace('/beers');
       })
       .catch(handleLoginErr);
   }
@@ -84,17 +92,20 @@ $(function () {
 $(function () {
   $('#brewery').click('submit', function (event) {
     event.preventDefault();
-    var addBrewery = {
-      name: $('#breweryName').val().trim(),
-      address: $('#breweryAddress').val().trim(),
-      phoneNumber: $('#breweryNumber').val().trim(),
-    };
-    console.log('addbrewery', addBrewery);
-    $.ajax('/api/brewery', {
-      type: 'POST',
-      data: addBrewery
-    }).then(function () {
-      window.location.replace('/beers/add');
+    $.get('/api/user_data').then(user => {
+
+      var addBrewery = {
+        name: $('#breweryName').val().trim(),
+        address: $('#breweryAddress').val().trim(),
+        phoneNumber: $('#breweryNumber').val().trim(),
+        UserId: user.id
+      };
+      $.ajax('/api/brewery', {
+        type: 'POST',
+        data: addBrewery
+      }).then(function ({ id }) {
+        window.location.replace('/beers/add?breweryid=' + id);
+      });
     });
   });
 });

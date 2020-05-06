@@ -22,12 +22,19 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 
+
 // We need to use sessions to keep track of our user's login status
 app.use(session({ secret: 'mouse rat', resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
+app.use(function (req, res, next) {
+  if (req.user) {
+    res.locals.user = req.user;
+  }
+  next();
+});
 require('./routes/html.js')(app);
 require('./routes/api.js')(app);
 

@@ -39,8 +39,8 @@ module.exports = function (app) {
   app.post('/api/brewery', function (req, res) {
     console.log('hit the route');
     db.Brewery.create(req.body)
-      .then(function () {
-        res.status(200).end();
+      .then(function (brewery) {
+        res.status(200).json(brewery);
       })
       .catch(function (err) {
         res.status(401).json(err);
