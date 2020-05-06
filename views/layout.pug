@@ -11,7 +11,7 @@ html
     nav.w3-bar.w3.border.w3-round.w3-light-grey( role="navigation" )
       .wrapclassnav
       .w3-bar-item Name of Project
-      if locals.user
+      if user
        a(href="/").w3-bar-item.w3-button.w3-bottombar.w3-hover-border-blue Home
        a(href="/beers/add").w3-bar-button.w3-button Beers
        a(href="/brewery/add").w3-bar-button.w3-button Brewery
