@@ -7,7 +7,6 @@ module.exports = function (app) {
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
   app.post('/api/login', passport.authenticate('local'), function (req, res) {
-    console.log('hit the route')
     res.json(req.user);
   });
 
@@ -28,6 +27,7 @@ module.exports = function (app) {
   });
 
   app.post('/api/beers', function (req, res) {
+    console.log('hit the route');
     db.Beer.create(req.body)
       .then(function () {
         res.status(200).end();

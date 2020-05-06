@@ -48,23 +48,39 @@ $(document).ready(function () {
 });
 
 $(function () {
-  $('#log').on('submit', function (event) {
+  $('#log').click('submit', function (event) {
     event.preventDefault();
-    var User = {
-      email: email,
-      password: password
+    var logIn = {
+      email: $('#email').val().trim(),
+      password: $('#password').val().trim()
     };
-    $.ajax('/login', {
+
+    $.ajax('/api/login', {
       type: 'POST',
-      data: User
+      data: logIn
     }).then(function () {
-      res.redirect('beer.pug');
+      window.location.replace('/brewery/add');
     });
   });
-
 });
 
+$(function () {
+  $('#log').click('submit', function (event) {
+    event.preventDefault();
+    var addBrewery = {
+      name: $('#breweryName').val().trim(),
+      address: $('#breweryAddress').val().trim(),
+      phoneNumber: $('#breweryNumber').val().trim(),
+    };
 
+    $.ajax('/api/brewery', {
+      type: 'POST',
+      data: addBrewery
+    }).then(function () {
+      window.location.replace('/beers/add');
+    });
+  });
+});
 
 $(function () {
   $('.change-stock').on('click', function (event) {
