@@ -37,6 +37,8 @@ module.exports = function (app) {
     // will need to make a db call to get the user data...pass that data into the template
 
   });
+
+
   app.get('/beers', function (req, res) {
     db.Beer.findAll({ raw: true }).then(function (beer) {
       res.render('beer.pug', { beers: beer, className: 'login' });
@@ -48,6 +50,19 @@ module.exports = function (app) {
   app.get('/beers/add', isAuthenticated, function (req, res) {
     res.render('addBeer', { className: 'current' });
   });
+
+  app.get('/users/:id', isAuthenticated, function (req, res) {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Brewery]
+    }).then(User => {
+      res.json(User);
+    });
+  });
+
+
   app.get('/brewery/detail', isAuthenticated, function (req, res) {
     db.Beers.findAll({
       where: {
