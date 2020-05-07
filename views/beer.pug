@@ -1,10 +1,13 @@
 extends layout
 block content
-    dl
+  .beerDisplay
+    dl.w3-table.w3-striped.w3-bordered
       each val, index in beers
-        dt= ' ' + val.name
+        dt.title= ' ' + val.name
         dd= 'Type: ' + val.beerType
         dd= 'IBU: ' + val.IBU
         dd= 'ABV: ' + val.ABV + '%'
         dd= 'Description: ' + val.description
+        hr
         p 
+        
