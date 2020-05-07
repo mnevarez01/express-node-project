@@ -16,6 +16,7 @@ body.current{
     width: 50%;
     padding: 20px;
 }
+
 #signDisplay {
     position: fixed;
     margin-right: 10%;
@@ -24,6 +25,7 @@ body.current{
     width: 50%;
     padding: 20px;
 }
+
 #addBrewery{
     margin-top: 10px;
 }
@@ -39,8 +41,7 @@ body.current{
 
 .homePage{
     margin-top: 10%;
-    margin-left: 10%;
-    
+    margin-left: 10%;  
 }
 
 #welcome{
