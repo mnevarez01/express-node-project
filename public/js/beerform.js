@@ -55,22 +55,22 @@ $(document).ready(function () {
 
 });
 
-// $(function () {
-//   $('#log').click('submit', function (event) {
-//     event.preventDefault();
-//     var newUser = {
-//       email: $('#email').val().trim(),
-//       password: $('#password').val().trim()
-//     };
+$(function () {
+  $('#signUp').click('submit', function (event) {
+    event.preventDefault();
+    var newUser = {
+      email: $('#email').val().trim(),
+      password: $('#password').val().trim()
+    };
 
-//     $.ajax('/api/', {
-//       type: 'POST',
-//       data: newUser
-//     }).then(function () {
-//       window.location.replace('/brewery/add');
-//     });
-//   });
-// });
+    $.ajax('/api/signup', {
+      type: 'POST',
+      data: newUser
+    }).then(function () {
+      window.location.replace('/api/login');
+    });
+  });
+});
 
 $(function () {
   $('#log').click('submit', function (event) {

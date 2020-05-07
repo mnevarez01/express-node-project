@@ -13,7 +13,7 @@ module.exports = function (app) {
     if (req.user) {
       return res.redirect('/brewery');
     }
-    res.render('home');
+    res.render('home', { className: 'login' });
   });
 
   app.get('/login', function (req, res) {
@@ -25,7 +25,9 @@ module.exports = function (app) {
       className: 'login'
     });
   });
-
+  app.get('/signup', function (req, res) {
+    res.render('signup', { className: 'current' });
+  });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get('/brewery', function (req, res) {
@@ -46,7 +48,5 @@ module.exports = function (app) {
   app.get('/beers/add', isAuthenticated, function (req, res) {
     res.render('addBeer', { className: 'current' });
   });
-  app.get('/signup', isAuthenticated, function (req, res) {
-    res.render('signup', { className: 'current' });
-  });
+
 };

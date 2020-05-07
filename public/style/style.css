@@ -1,3 +1,12 @@
+body.login{
+    background-image: url(/img/homebg.jpg);
+    
+}
+body.current{
+    background-image: url(/img/brewer.jpg);
+
+}
+
 #log {
     position: fixed;
     margin-right: 10%;
@@ -5,6 +14,10 @@
     margin-top: 10%;
     width: 500px;
    
+}
+
+#addBrewery{
+    margin-top: 10px;
 }
 
 .btn-primary{
@@ -15,19 +28,25 @@
 .backgroundTwo{
     width: 100%;
 }
-body{
 
-    margin-top: 20%;
-    margin-left: 30%;
-    margin-right: 30%;
-    padding: 10px;
-    border-style: groove;
+.homePage{
+    margin-top: 10%;
+    margin-left: 10%;
+    
 }
-/* .current {
-    background-image: url("/public/img/brewer.jpg");
-    margin: 100%;
+
+#welcome{
+    font-family: 'Bitter', serif;
+    font-style: italic;
+    font-size: 75px;
 }
-.login{
-    background-image: url("/public/img/brewer.jpg");
-    margin: 100%;
-} */
+.beerDisplay{
+    margin: 10%;
+}
+.breweryDisplay{
+    margin-top: 5%;
+    margin-left: 10%;
+}
+.title{
+    font-family: 'Bitter', serif;
+}
