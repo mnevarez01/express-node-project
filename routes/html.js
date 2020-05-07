@@ -85,14 +85,4 @@ module.exports = function (app) {
       res.render('addBeer', { beers: Beers, className: 'current' });
     });
   });
-
-  app.get('/brewery/detail', isAuthenticated, function (req, res) {
-    db.Beers.findAll({
-      where: {
-        UserId: brewery.id
-      }
-
-    }).then(
-      res.render('breweryDetail', { beer: beer, className: 'current' }));
-  });
 };

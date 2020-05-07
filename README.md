@@ -29,3 +29,8 @@ Node.js, Express, Express-Session, Sequelize, JavaScript, HTML, CSS, PUG, MySQL,
 ## Installation
 - Run npm install through terminal.
 - Direct your browser to localhost:8080.
+
+## Colaborators:
+Ryan Siverson
+Maria Nevarez
+Brandon Nelson

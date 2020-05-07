@@ -2,6 +2,7 @@ extends layout
 block content
   .userDisplay
     dl.w3-panel.w3-border.w3-container.w3-center#textDisplay
+    if User && User.Breweries
       each val, index in User.Breweries
         dt.title= 'Brewery: ' + val.name
         dt= 'Address: ' + val.address
