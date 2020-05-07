@@ -24,10 +24,11 @@ block content
   .userDisplay
     dl.w3-panel.w3-border.w3-container.w3-center#textDisplay
       each val, index in beers
-        dt.title= 'Brewery: ' + val.name
-        dt= 'Address: ' + val.beerType
-        dt= 'Phone Number: ' + val.ibu
-        dt= 'Phone Number: ' + val.abv
-        dt= 'Phone Number: ' + val.description
+        
+        dt.title= 'Name: ' + val.name
+        dt= 'Type: ' + val.beerType
+        dt= 'IBU: ' + val.IBU
+        dt= 'ABU: ' + val.ABV
+        dt= 'Description: ' + val.description
         hr
         p
