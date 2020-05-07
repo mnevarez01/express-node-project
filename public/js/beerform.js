@@ -83,8 +83,8 @@ $(function () {
     $.ajax('/api/login', {
       type: 'POST',
       data: logIn
-    }).then(function () {
-      window.location.replace('/brewery/add');
+    }).then(function (User) {
+      window.location.href = '/users/' + User.id;
     });
   });
 });
