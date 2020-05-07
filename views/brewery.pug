@@ -1,9 +1,10 @@
 extends layout
 block content
   .breweryDisplay
-    dl.w3-table.w3-striped.w3-bordered
+    dl.w3-panel.w3-border.w3-container.w3-center#textDsiplay
       each val, index in breweries
         dt.title= 'Brewery: ' + val.name
         dt= 'Address: ' + val.address
         dt= 'Phone Number: ' + val.phoneNumber
+        hr
         p

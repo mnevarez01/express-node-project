@@ -43,7 +43,7 @@ $(document).ready(function () {
       BreweryId: $.urlParam('breweryid')
     })
       .then(function (data) {
-        window.location.replace('/beers?breweryid=' + id);
+        window.location.replace('/beers');
       })
       .catch(handleLoginErr);
   }
@@ -56,7 +56,7 @@ $(document).ready(function () {
 });
 
 $(function () {
-  $('#signUp').click('submit', function (event) {
+  $('#signUp').on('click', function (event) {
     event.preventDefault();
     var newUser = {
       email: $('#email').val().trim(),
@@ -67,7 +67,7 @@ $(function () {
       type: 'POST',
       data: newUser
     }).then(function () {
-      window.location.replace('/api/login');
+      window.location.replace('/');
     });
   });
 });

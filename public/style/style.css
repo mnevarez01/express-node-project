@@ -4,6 +4,7 @@ body.login{
 }
 body.current{
     background-image: url(/img/brewer.jpg);
+    height: auto;
 
 }
 
@@ -12,10 +13,17 @@ body.current{
     margin-right: 10%;
     margin-left: 10%;
     margin-top: 10%;
-    width: 500px;
-   
+    width: 50%;
+    padding: 20px;
 }
-
+#signDisplay {
+    position: fixed;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-top: 10%;
+    width: 50%;
+    padding: 20px;
+}
 #addBrewery{
     margin-top: 10px;
 }
@@ -40,12 +48,22 @@ body.current{
     font-style: italic;
     font-size: 75px;
 }
+#addBeers{
+    font-family: 'Bitter', serif;
+    font-style: italic;
+    font-size: 35px;
+}
+#textDsiplay{
+    font-size: 20px;
+}
 .beerDisplay{
     margin: 10%;
 }
 .breweryDisplay{
     margin-top: 5%;
     margin-left: 10%;
+    margin-right: 10%;
+
 }
 .title{
     font-family: 'Bitter', serif;
