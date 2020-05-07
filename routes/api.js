@@ -30,12 +30,11 @@ module.exports = function (app) {
       })
       .catch(function (err) {
         res.status(401).json(err);
-      })
+      });
 
   });
 
   app.post('/api/brewery', function (req, res) {
-    console.log('hit the route');
     db.Brewery.create(req.body)
       .then(function (brewery) {
         res.status(200).json(brewery);

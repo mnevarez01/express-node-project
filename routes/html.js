@@ -1,5 +1,4 @@
 // Requiring path to so we can use relative routes to our HTML files
-var path = require('path');
 var db = require('../models');
 
 
@@ -19,14 +18,14 @@ module.exports = function (app) {
   app.get('/login', function (req, res) {
     // If the user already has an account send them to the members page
     if (req.user) {
-      res.redirect('/brewery');
+      return res.redirect('/brewery');
     }
     res.render('login.pug', {
       className: 'login'
     });
   });
   app.get('/signup', function (req, res) {
-    res.render('signup', { className: 'current' });
+    res.render('signup', { className: 'login' });
   });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
@@ -37,6 +36,8 @@ module.exports = function (app) {
     // will need to make a db call to get the user data...pass that data into the template
 
   });
+
+
   app.get('/beers', function (req, res) {
     db.Beer.findAll({ raw: true }).then(function (beer) {
       res.render('beer.pug', { beers: beer, className: 'login' });
@@ -49,4 +50,26 @@ module.exports = function (app) {
     res.render('addBeer', { className: 'current' });
   });
 
+  app.get('/users/:id', isAuthenticated, function (req, res) {
+    db.User.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Brewery]
+    }).then(User => {
+      // res.json(User);
+      console.log(User);
+      res.render('userDetails', { User: User, className: 'current' });
+    });
+  });
+
+  app.get('/brewery/detail', isAuthenticated, function (req, res) {
+    db.Beers.findAll({
+      where: {
+        UserId: brewery.id
+      }
+
+    }).then(
+      res.render('breweryDetail', { beer: beer, className: 'current' }));
+  });
 };

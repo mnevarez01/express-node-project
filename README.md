@@ -17,7 +17,7 @@ We are a service for breweries and, potentially, consumers. We allow a brewery t
 Node.js, Express, Express-Session, Sequelize, JavaScript, HTML, CSS, PUG, MySQL, BCRYPT, BCRYPTJS, Passport, Routes.
 
 ## Screenshots
-![img](http://url/to/img.png)
+![imgDescription](http://url/to/img.png)
 
 ## Example Code
 ![Alewery Code](Example-Code.png)

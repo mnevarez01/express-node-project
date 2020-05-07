@@ -1,13 +1,15 @@
+/* Sets background image */
 body.login{
     background-image: url(/img/homebg.jpg);
     
 }
 body.current{
     background-image: url(/img/brewer.jpg);
-    height: auto;
+    background-size: cover;
 
 }
 
+/* Targets log in page */
 #log {
     position: fixed;
     margin-right: 10%;
@@ -17,6 +19,7 @@ body.current{
     padding: 20px;
 }
 
+/* targets sign in form */
 #signDisplay {
     position: fixed;
     margin-right: 10%;
@@ -28,34 +31,57 @@ body.current{
 
 #addBrewery{
     margin-top: 10px;
+
 }
 
+/* targets all buttons in fields */
 .btn-primary{
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 10px;S
 }
 
-.backgroundTwo{
-    width: 100%;
-}
-
+/* Home Page */
 .homePage{
     margin-top: 10%;
     margin-left: 10%;  
 }
-
 #welcome{
     font-family: 'Bitter', serif;
     font-style: italic;
     font-size: 75px;
 }
+#homeP{
+    font-family: 'Bitter', serif;
+    font-size: large;
+}
+#drink{
+    font-family: 'Bitter', serif;
+    text-align: center;
+    font-style: italic;
+    font-size: 50px;
+}
+
+/* Title name for addbeers/addbreweries */
 #addBeers{
     font-family: 'Bitter', serif;
     font-style: italic;
     font-size: 35px;
 }
-#textDsiplay{
+#addBrewery{
+    margin-top: 10px;
+}
+.addDiv{
+    margin-left: 10%;
+    margin-top: 10%;
+    border-style: groove;
+}
+
+/* targeting table in beers/brewery */
+#textDisplay{
     font-size: 20px;
+}
+.title{
+    font-family: 'Bitter', serif;
 }
 .beerDisplay{
     margin: 10%;
@@ -64,8 +90,12 @@ body.current{
     margin-top: 5%;
     margin-left: 10%;
     margin-right: 10%;
-
 }
-.title{
-    font-family: 'Bitter', serif;
+
+.addBrewery {
+    margin-left: 25px;
+}
+
+#newBeer {
+    margin-left: 25px;
 }
