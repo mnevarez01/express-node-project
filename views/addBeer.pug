@@ -2,6 +2,7 @@ extends allForms
 
 block content
   #newBeer
+    h1#addBeers Add a Beer:
     form(action="POST", method="/api/beer" id="add-beer")
       .form.group.name
         label(for='name') Beer Name:
