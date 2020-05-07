@@ -3,12 +3,12 @@ extends layout
 block content
     .content
         form.w3-panel.w3-border(id= "log")
-          h3 Log In: 
+          h3.title Log In: 
           div.form-group
             label(for='email') Email:
-            input#email.form-control(type='email', placeholder='name@email.com' name='email' class='w3-input')
+            input#email.form-control.w3-input(type='email', placeholder='name@email.com' name='email' class='w3-input')
           div.form-group
             label(for='pw') Password:
-            input#password.form-control(type='password' placeholder='password' name='password' class='w3-input')
+            input#password.form-control.w3-input(type='password' placeholder='password' name='password' class='w3-input')
        
           button.btn.btn-primary.w3-btn.w3-black(type='submit') Sign In    

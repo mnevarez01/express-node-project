@@ -20,7 +20,7 @@ body.current{
 }
 
 /* targets sign in form */
-#signDisplay {
+.signUp {
     position: fixed;
     margin-right: 10%;
     margin-left: 10%;
@@ -29,10 +29,7 @@ body.current{
     padding: 20px;
 }
 
-#addBrewery{
-    margin-top: 10px;
 
-}
 
 /* targets all buttons in fields */
 .btn-primary{
@@ -60,6 +57,12 @@ body.current{
     font-style: italic;
     font-size: 50px;
 }
+#pageName{
+    text-align: center;
+    font-style: italic;
+    font-size: 100px;
+    font-family: 'Lobster', cursive;
+}
 
 /* Title name for addbeers/addbreweries */
 #addBeers{
@@ -69,9 +72,13 @@ body.current{
 }
 #addBrewery{
     margin-top: 10px;
+    font-family: 'Bitter', serif;
+    font-style: italic;
+    font-size: 35px;
 }
 .addDiv{
     margin-left: 10%;
+    margin-right: 10%;
     margin-top: 10%;
     border-style: groove;
 }
@@ -82,6 +89,7 @@ body.current{
 }
 .title{
     font-family: 'Bitter', serif;
+    font-size: 40px;
 }
 .beerDisplay{
     margin: 10%;

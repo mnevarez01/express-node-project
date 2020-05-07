@@ -1,22 +1,22 @@
 extends allForms
 
 block content
-  #newBeer
+  .addDiv
     h1#addBeers Add a Beer:
     form(action="POST", method="/api/beer" id="beerForm")
       .form.group.name
         label(for='name') Beer Name:
-        input#beerName.form-control(type='text', placeholder='Beer Name', name='name')
+        input#beerName.form-control.w3-input(type='text', placeholder='Beer Name', name='name')
       .form.group.description
         label(for='description') Description of Beer:
-        input#beerDesc.form-control(type='text', placeholder='Has lime undertones', name='description')
+        input#beerDesc.form-control.w3-input(type='text', placeholder='Has lime undertones', name='description')
       .form.group.ABV
         label(for='ABV') Beer ABV:
-        input#ABV.form-control(type='text', placeholder='6.5%', name='ABV')
+        input#ABV.form-control.w3-input(type='text', placeholder='6.5%', name='ABV')
       .form.group.IBU
         label(for='IBU') Beer IBU:
-        input#IBU.form-control(type='text', placeholder='10', name='IBU')
+        input#IBU.form-control.w3-input(type='text', placeholder='10', name='IBU')
       .form.group.beerType
         label(for='beerType') Beer Type:
-        input#beerType.form-control(type='text', placeholder='Pale Ale', name='beerType')
+        input#beerType.form-control.w3-input(type='text', placeholder='Pale Ale', name='beerType')
       button.btn.btn-primary.w3-btn.w3-black#beerbutton(type='submit') Add Beer
