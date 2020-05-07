@@ -2,9 +2,10 @@ extends layout
 block content
   .userDisplay
     dl.w3-panel.w3-border.w3-container.w3-center#textDisplay
-      each val, index in breweries
+      each val, index in User.Breweries
         dt.title= 'Brewery: ' + val.name
         dt= 'Address: ' + val.address
         dt= 'Phone Number: ' + val.phoneNumber
+        button.btn.btn-primary.w3-btn.w3-black#brewery(type='submit', data-id=val.id) Select Brewery
         hr
         p
