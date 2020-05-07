@@ -20,3 +20,14 @@ block content
         label(for='beerType') Beer Type:
         input#beerType.form-control(type='text', placeholder='Pale Ale', name='beerType')
       button.btn.btn-primary.w3-btn.w3-black#beerbutton(type='submit') Add Beer
+
+  .userDisplay
+    dl.w3-panel.w3-border.w3-container.w3-center#textDisplay
+      each val, index in beers
+        dt.title= 'Brewery: ' + val.name
+        dt= 'Address: ' + val.beerType
+        dt= 'Phone Number: ' + val.ibu
+        dt= 'Phone Number: ' + val.abv
+        dt= 'Phone Number: ' + val.description
+        hr
+        p

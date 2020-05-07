@@ -74,6 +74,7 @@ body.current{
     margin-left: 10%;
     margin-top: 10%;
     border-style: groove;
+    width: 600px;
 }
 
 /* targeting table in beers/brewery */
