@@ -4,6 +4,7 @@ body.login{
 }
 body.current{
     background-image: url(/img/brewer.jpg);
+    height: auto;
 
 }
 
@@ -15,7 +16,7 @@ body.current{
     width: 50%;
     padding: 20px;
 }
-#signUp {
+#signDisplay {
     position: fixed;
     margin-right: 10%;
     margin-left: 10%;
