@@ -63,6 +63,29 @@ module.exports = function (app) {
     });
   });
 
+
+  app.get('/beers/:id', isAuthenticated, function (req, res) {
+    db.Beer.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Brewery]
+    }).then(User => {
+      res.render('userDetails', { User: User, className: 'current' });
+    });
+  });
+
+  app.get('/brewery/:id', isAuthenticated, function (req, res) {
+    db.Beer.findAll({
+      where: {
+        BreweryId: req.params.id
+      }
+    }).then(Beers => {
+      console.log(Beers);
+      res.render('addBeer', { beers: Beers, className: 'current' });
+    });
+  });
+
   app.get('/brewery/detail', isAuthenticated, function (req, res) {
     db.Beers.findAll({
       where: {

@@ -3,7 +3,7 @@
 ## Project 2 - Express Node MVC
 ## Alewery - A Front Range Taproom Resource
 ### Maria Nevarez, Ryan Siverson, and Brandon Nelson
-### [https://github.com/mnevarez01/express-node-project]
+### https://github.com/mnevarez01/express-node-project
 
 ## User Story
 I’m a BREWERY who wants to SECURELY create and log into a web-based resource where I can add and update the selection of beers I’m currently offering to Colorado Front Range taproom customers.
@@ -17,9 +17,13 @@ We are a service for breweries and, potentially, consumers. We allow a brewery t
 Node.js, Express, Express-Session, Sequelize, JavaScript, HTML, CSS, PUG, MySQL, BCRYPT, BCRYPTJS, Passport, Routes.
 
 ## Screenshots
-![imgDescription](http://url/to/img.png)
+![Screenshot1](Alewery-Screenshot-1.png)
+
+![Screenshot2](Alewery-Screenshot-2.png)
 
 ## Example Code
 ![Alewery Code](Example-Code.png)
 
-## Video
+## Installation
+- Run npm install through terminal.
+- Direct your browser to localhost:8080.

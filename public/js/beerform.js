@@ -140,3 +140,9 @@ $(function () {
     });
   });
 });
+
+$('.brewery').on('click', function () {
+  console.log('hit');
+  const id = $(this).data('id');
+  location.href = '/brewery/' + id;
+});
