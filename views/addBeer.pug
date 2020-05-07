@@ -3,7 +3,7 @@ extends allForms
 block content
   #newBeer
     h1#addBeers Add a Beer:
-    form(action="POST", method="/api/beer" id="add-beer")
+    form(action="POST", method="/api/beer" id="beerForm")
       .form.group.name
         label(for='name') Beer Name:
         input#beerName.form-control(type='text', placeholder='Beer Name', name='name')

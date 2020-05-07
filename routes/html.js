@@ -1,5 +1,4 @@
 // Requiring path to so we can use relative routes to our HTML files
-var path = require('path');
 var db = require('../models');
 
 
@@ -26,7 +25,7 @@ module.exports = function (app) {
     });
   });
   app.get('/signup', function (req, res) {
-    res.render('signup', { className: 'current' });
+    res.render('signup', { className: 'login' });
   });
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
