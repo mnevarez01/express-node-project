@@ -16,6 +16,9 @@ We are a service for breweries and, potentially, consumers. We allow a brewery t
 ## Technologies Used
 Node.js, Express, Express-Session, Sequelize, JavaScript, HTML, CSS, PUG, MySQL, BCRYPT, BCRYPTJS, Passport, Routes.
 
+## Live Site
+![Demo](public/img/beerdemo.gif)
+
 ## Screenshots
 ![Screenshot](Alewery-Title-Page.png)
 
