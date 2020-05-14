@@ -19,7 +19,7 @@ app.use(express.json());
 
 app.use(express.static('public'));
 app.use(express.static('public/img'));
-app.use(express.static('dist'));
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
