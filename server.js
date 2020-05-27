@@ -6,6 +6,7 @@ var passport = require('./config/passport');
 // var pug = require('pug');
 var path = require('path');
 
+
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
 var db = require('./models');
@@ -17,6 +18,7 @@ app.use(express.json());
 
 app.use(express.static('public'));
 app.use(express.static('public/img'));
+
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
