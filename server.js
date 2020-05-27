@@ -5,8 +5,8 @@ var session = require('express-session');
 var passport = require('./config/passport');
 // var pug = require('pug');
 var path = require('path');
-var compression = require('compression');
-app.use(compression({ filter: shouldCompress }));
+// var compression = require('compression');
+// app.use(compression({ filter: shouldCompress }));
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
