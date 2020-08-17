@@ -5,8 +5,6 @@ var session = require('express-session');
 var passport = require('./config/passport');
 // var pug = require('pug');
 var path = require('path');
-var compression = require('compression');
-app.use(compression({ filter: shouldCompress }));
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 8080;
@@ -14,6 +12,9 @@ var db = require('./models');
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+// var compression = require('compression');
+// app.use(compression({ filter: shouldCompress }));
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
